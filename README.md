@@ -34,14 +34,14 @@ The graphics, sounds, music and rules all come from the original Flash file
   the same way. The splash, eat ("burp"), sploosh and XGen intro sounds are
   also the originals.
 - **Graphics.** Every fish, plant, bone, button and title letter was exported
-  from the SWF's vector art and rendered at 3 to 4 times the original size,
+  from the SWF's vector art and rendered at 1.5 to 4 times the original size,
   so it stays sharp on phone screens. Each screen is placed at its original
   coordinates on the original 550 x 400 stage.
 - **Rules.** The game logic is a line-by-line port of the original
   ActionScript. It runs at the original 30 frames per second. Fish sizes,
   speeds and colours are random in the same ranges. You grow by 1/50 of each
   fish you eat, you score 6 points per unit of its size, and you win when you
-  pass size 300 and have eaten everything in the pond.
+  pass size 300.
 
 What changed for phones:
 
@@ -51,8 +51,9 @@ What changed for phones:
   work on a keyboard.
 - **Easier start.** In the original only 13 of the 72 possible fish sizes
   were smaller than your starting fish. Here, while you are small, up to 60%
-  of new fish spawn smaller than you. That help fades out as you grow and is
-  gone at size 60, from where the original size roll applies unchanged.
+  of new fish are forced to spawn smaller than you and the rest are rolled as
+  before. That help fades out as you grow and is gone at size 60, from where
+  the original size roll applies unchanged.
 - **High scores.** XGen's online high-score server is gone, so the top 10
   scores are saved on the phone.
 - **Wide screens.** The pond is mirrored into the extra width at the sides.
