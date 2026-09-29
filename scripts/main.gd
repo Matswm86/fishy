@@ -18,6 +18,11 @@ const SAVE_PATH := "user://fishy.cfg"
 const MAX_SCORES := 10
 const JOY_DEADZONE := 10.0
 const BUTTON_PAD := 8.0
+# Beginner help: while the player is small, this share of new fish spawns
+# smaller than the player. It falls linearly to 0 at size EASE_END, where the
+# original 2..73 size roll takes over completely.
+const EASE_START_SHARE := 0.6
+const EASE_END := 60.0
 
 # Title letters "! F I S H Y !" inside sprite 166 at (282.4, 74.45).
 const TITLE_ORIGIN := Vector2(282.4, 74.45)
@@ -473,9 +478,16 @@ func _restart_plants() -> void:
 # --------------------------------------------------------------- game logic
 
 
+func _roll_fish_size() -> int:
+	var share := EASE_START_SHARE * clampf((EASE_END - f_size) / (EASE_END - 15.0), 0.0, 1.0)
+	if randf() < share:
+		return randi() % maxi(1, int(f_size) - 2) + 2
+	return randi() % 72 + 2
+
+
 func _randomize_fish(i: int) -> void:
 	# Shared body of the frame 15 setup and the respawn in walk frame 1.
-	fishsize[i] = randi() % 72 + 2
+	fishsize[i] = _roll_fish_size()
 	fishspeed[i] = (randi() % 6 - 3) * 2
 	if fishspeed[i] == 0:
 		fishspeed[i] = 2

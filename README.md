@@ -49,6 +49,10 @@ What changed for phones:
   joystick. Dragging left, right, up or down counts as holding that arrow key,
   so the fish accelerates exactly like the keyboard version. Arrow keys still
   work on a keyboard.
+- **Easier start.** In the original only 13 of the 72 possible fish sizes
+  were smaller than your starting fish. Here, while you are small, up to 60%
+  of new fish spawn smaller than you. That help fades out as you grow and is
+  gone at size 60, from where the original size roll applies unchanged.
 - **High scores.** XGen's online high-score server is gone, so the top 10
   scores are saved on the phone.
 - **Wide screens.** The pond is mirrored into the extra width at the sides.
