@@ -1,10 +1,4 @@
-# Canonical pre-commit config for MWM Godot/Android repos.
-# Synced via: scripts/sync-pre-commit.sh
-# Source of truth: mwm-infrastructure/templates/pre-commit/android.yaml
-# Plan ref: plans/cicd-comprehensive-fix-plan-2026-05-07.md (Phase 1.1)
-#
-# No Python hooks — Godot 4 + GDScript projects only.
-
+# Pre-commit hooks for this Godot/Android repo (no Python hooks).
 default_stages: [pre-commit]
 fail_fast: false
 
